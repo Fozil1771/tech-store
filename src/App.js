@@ -4,6 +4,7 @@ import './assets/sass/main.scss'
 
 /// components
 import Loader from './components/Loader'
+import Products from './components/Products'
 
 
 
@@ -18,6 +19,7 @@ function App() {
 
 
       <h1>Initial sssss</h1>
+      <Products />
     </div>
   );
 }
