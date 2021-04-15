@@ -3,7 +3,8 @@ import React from 'react'
 import './assets/sass/main.scss'
 
 /// components
-import Loader from './components/Loader'
+
+import Navbar from './components/navbar/navbar'
 import Products from './components/Products'
 
 
@@ -12,12 +13,10 @@ function App() {
   return (
     <div className="App">
 
-      <div className="spin-box">
-        <Loader />
-      </div>
 
 
 
+      <Navbar />
       <h1>Initial sssss</h1>
       <Products />
     </div>

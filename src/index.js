@@ -1,21 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import cartReducer from './components/reducers/cartReducer.js';
 
 
-const store = createStore(cartReducer)
+import store from './components/redux/reducers/rootReducer';
 
 ReactDOM.render(
   <Provider store={store}>
-
     <App />
-
   </Provider>,
   document.getElementById('root')
 );

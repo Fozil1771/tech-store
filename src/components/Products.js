@@ -1,15 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CardBlock from './cards-ui/CardBlock'
+import Spinner from './Loader'
 
 
-const Products = (props) => {
+
+const Products = ({ products, fetched, fetching }) => {
 
     return (
         <div>
-            {props.products.map(product => {
+            {fetching ? <Spinner /> : products != null ? products.map(product => {
                 return <CardBlock key={product.id} name={product.name} />
-            })}
+            }) : 'no data'}
+
         </div>
     )
 }
@@ -17,8 +20,11 @@ const Products = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products
+        products: state.products,
+        fetched: state.fetched,
+        fetching: state.fetching
     }
 }
+
 
 export default connect(mapStateToProps)(Products);
