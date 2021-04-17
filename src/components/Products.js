@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CardBlock from './cards-ui/CardBlock'
-import Spinner from './Loader'
 
 
 
-const Products = ({ products, fetched, fetching }) => {
+
+const Products = ({ products }) => {
 
     return (
         <div>
@@ -17,11 +17,10 @@ const Products = ({ products, fetched, fetching }) => {
 }
 
 
+
 const mapStateToProps = (state) => {
     return {
         products: state.products,
-        fetched: state.fetched,
-        fetching: state.fetching
     }
 }
 
