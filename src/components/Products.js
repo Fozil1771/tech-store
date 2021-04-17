@@ -9,10 +9,9 @@ const Products = ({ products, fetched, fetching }) => {
 
     return (
         <div>
-            {fetching ? <Spinner /> : products != null ? products.map(product => {
+            {products != null ? products.map(product => {
                 return <CardBlock key={product.id} name={product.name} />
             }) : 'no data'}
-
         </div>
     )
 }

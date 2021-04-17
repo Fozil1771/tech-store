@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
+import { connect } from 'react-redux'
 
 import './assets/sass/main.scss'
 
@@ -7,14 +9,16 @@ import './assets/sass/main.scss'
 import Navbar from './components/navbar/navbar'
 import Products from './components/Products'
 
+import Spinner from './components/Loader'
 
 
-function App() {
+function App({ fetching }) {
+
+
   return (
     <div className="App">
 
-
-
+      {fetching ? <Spinner /> : ''}
 
       <Navbar />
       <h1>Initial sssss</h1>
@@ -23,4 +27,11 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    fetching: state.fetching
+  }
+}
+
+
+export default connect(mapStateToProps)(App);
