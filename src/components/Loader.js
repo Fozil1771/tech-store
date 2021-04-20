@@ -6,7 +6,7 @@ const Spinner = () => {
     return (
         <div className="spin-box">
             <Loader
-                type="Grid"
+                type="Rings"
                 color="#00BFFF"
                 height={100}
                 width={100}

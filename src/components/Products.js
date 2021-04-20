@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import CardBlock from './ui/cards/CardBlock'
+import CardBlock from './cards-ui/CardBlock'
 
 
 
@@ -10,7 +10,7 @@ const Products = ({ products, fetched }) => {
 
         <div>
             {fetched && products != null ? products.map(product => {
-                return <CardBlock key={product.id} inStock={product.inStock} name={product.name} oldPrice={product.oldPrice} />
+                return <div>{product.name}</div>
             }) : 'no data'}
         </div>
 

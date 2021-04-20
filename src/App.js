@@ -3,8 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 /// components
-
-import Navbar from './components/navbar/navbar'
+import Navbar from './components/navbar/Navbar'
 import Products from './components/Products'
 
 import Spinner from './components/Loader'
