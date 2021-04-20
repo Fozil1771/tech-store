@@ -3,26 +3,34 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 /// components
-import Navbar from './components/navbar/Navbar'
+
 import Products from './components/Products'
-
+import Navbar from './components/navbar/Navbar'
 import Spinner from './components/Loader'
-
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import SingleProduct from './components/SingleProduct'
 
 
 function App({ fetching }) {
 
 
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
 
-      {fetching ? <Spinner /> : ''}
+        {fetching ? <Spinner /> : ''}
 
-      <Navbar />
+        <Navbar />
 
-      <h1>Initial sssss</h1>
-      <Products />
-    </div>
+        <h1>Initial sssss</h1>
+        <Link to="/product">Products</Link>
+        <Switch>
+          <Route exact path="/product" component={Products} />
+          <Route exact path="/product/:id" component={SingleProduct} />
+        </Switch>
+
+      </div>
+    </BrowserRouter>
   );
 }
 

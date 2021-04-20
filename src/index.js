@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
+import './assets/sass/main.scss'
 import store from './components/redux/reducers/rootReducer';
 
 ReactDOM.render(

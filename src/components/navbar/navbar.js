@@ -1,12 +1,17 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
+import NavBody from './NavBody'
+import NavHead from './NavTop'
 
 const Navbar = () => {
     return (
-        <nav>
-            tech-store
-        </nav>
+        <BrowserRouter>
+            <NavHead />
+            <NavBody />
+        </BrowserRouter>
     )
 }
+
 
 export default Navbar;
