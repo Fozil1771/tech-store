@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import './mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+
+
+
+}
+
+.page {
+    @include container;
+    overflow-x: hidden;
+}
+
+@import './btn';
+@import 'mainPage';
+
+.service-main {
+    background: #F5F7FF;
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+        font-size: 18px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+.spin-box {
+    background: #222;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    overflow: hidden;
+    // animation: fade-out 2s ease forwards 4.5s;
+
+
+    @keyframes fade-out {
+        from {
+            opacity: 1;
+            display: block;
+            visibility: visible;
+        }
+
+        to {
+            opacity: 0;
+            display: none;
+            z-index: -1;
+            visibility: hidden;
+
+
+        }
+    }
+}
+
+.spinner {
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 10;
+
+}
+
+
+.inputFlow {
+    animation: fade-out 2s ease forwards;
+
+
+    @keyframes fade-out {
+        from {
+            opacity: 0;
+            width: 0%;
+        }
+
+        to {
+            opacity: 1;
+            width: 100%;
+
+
+        }
+    }
+}
+
+.slick-slider {
+
+    .slider-img {
+        width: 100%;
+        height: 20rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .slick-next,
+    .slick-prev {
+        font-size: 22px;
+        z-index: 2;
+    }
+
+    .slick-next {
+        right: 20px;
+    }
+
+    .slick-prev {
+        left: 20px;
+    }
+
+    .slick-next:before,
+    .slick-prev:before {
+        color: #222 !important;
+        font-size: 22px;
+    }
+}
+
+
+.title {
+    padding: 2rem 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+}
+
+.blog-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 2rem 0;
+}
+
+.brands {
+    margin: 4rem 0;
+
+    .slick-slider {
+        .slick-arrow {
+            display: none !important;
+        }
+
+    }
+}
+
+// horizontal full width lines 
+.lines {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    overflow-x: hidden;
+}
+
+.breadcrumbs {
+    padding-top: 2rem;
+
+    a {
+        color: #222;
+
+        &:hover {
+            color: #334cbb;
+        }
+
+    }
+}
+
+.dropdown {
+    overflow-y: hidden;
+
+
+    &-body {
+        position: relative;
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0px;
+        transition: max-height 0.6s ease;
+    }
+
+    &-body.active {
+        visibility: visible;
+
+
+        height: auto;
+        max-height: 100%;
+        opacity: 1;
+        transition: max-height 0.7s, opacity .5s, visibility 4s ease;
+    }
+}
+
+.input-block {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    width: 100%;
+}
+
+.empty {
+    text-align: center;
+    margin: 4rem;
+
+    h2 {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+}
+
+.user-temporarily {
+    text-align: center;
+    margin: 4rem;
+
+    h1 {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    h3,
+    h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+}

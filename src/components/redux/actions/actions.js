@@ -1,44 +1,29 @@
-import { FAIL_RPODUCTS, FETCH_PRODUCTS, SUCCESS_RPODUCTS } from './actionTypes'
+import { ADD_QUANTITY, ADD_TO_CART, REMOVE_FROM_CART, SUB_QUANTITY } from './actionTypes'
 
-
-
-const initialState = {
-    addItem: 0,
-    total: 0,
-    fetching: false,
-    fetched: false,
-    products: null,
-    error: null
+export const addToCart = (id) => {
+    return {
+        type: ADD_TO_CART,
+        id
+    }
 }
 
+export const removeItem = (id) => {
+    return {
+        type: REMOVE_FROM_CART,
+        id
+    }
+}
 
-export const cartReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case FETCH_PRODUCTS: {
-            return {
-                ...state,
-                fetching: true
-            }
-
-        }
-        case FAIL_RPODUCTS: {
-            return {
-                ...state,
-                fetched: false,
-                error: action.payload
-            }
-
-        }
-        case SUCCESS_RPODUCTS: {
-            return {
-                ...state,
-                fetching: false,
-                fetched: true,
-                products: action.payload,
-
-            }
-        }
-        default:
-            return state;
+export const subtractQuantity = (id) => {
+    return {
+        type: SUB_QUANTITY,
+        id
+    }
+}
+//add qt action
+export const addQuantity = (id) => {
+    return {
+        type: ADD_QUANTITY,
+        id
     }
 }

@@ -1,0 +1,132 @@
+// SCSS Variables
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+
+
+.reviewBlock {
+  .slick-slider {
+    .slick-arrow {
+      display: none !important;
+    }
+
+    .slick-dots {
+      bottom: 50px !important;
+      text-align: end;
+      padding: 0rem 5rem;
+
+      button::before {
+        font-size: .8rem;
+      }
+
+      li.slick-active {
+        button::before {
+          color: #0156FF !important;
+        }
+      }
+    }
+  }
+}
+
+.codepen-wrapper {
+  // Codepen display purposes
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review {
+  color: #111;
+  font-size: 1.1rem;
+  padding: 5rem;
+  position: relative;
+  background-color: #F5F7FF;
+  overflow: hidden;
+  flex: 0 0 50%;
+  z-index: 1;
+
+  @media screen and (max-width: $bp-medium) {
+    padding: 4rem;
+  }
+
+  @media screen and (max-width: $bp-small) {
+    padding: 2rem;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+  }
+
+  &::before {
+    content: "\201c";
+    position: absolute;
+    left: 1rem;
+    top: -.5rem;
+    font-size: 12rem;
+    color: #111;
+    line-height: 1;
+    z-index: 1;
+    font-family: sans-serif;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+    z-index: 2;
+    position: relative; // Z-index only works if you define the position
+
+    @media screen and (max-width: $bp-medium) {
+      margin: 0; // Overwrite default blockquote margins
+      padding: 1rem;
+    }
+  }
+
+  &__person {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+
+    @media screen and (max-width: $bp-small) {
+      margin-right: .5rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: auto;
+
+    &--name {
+      flex: 0 0 80%;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+
+      @media screen and (max-width: $bp-small) {
+        font-size: .9rem;
+      }
+    }
+
+    &--date {
+      font-size: .9rem;
+
+      @media screen and (max-width: $bp-small) {
+        font-size: .7rem;
+      }
+    }
+  }
+
+  &__rating {
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+
+  .leave-review {
+    margin: 1rem 0;
+  }
+
+}

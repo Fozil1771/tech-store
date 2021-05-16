@@ -5,12 +5,21 @@ import { Provider } from 'react-redux'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import './assets/sass/main.scss'
+//style imports
+import 'normalize.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import './styles/sass/main.scss'
+
+//store
 import store from './components/redux/reducers/rootReducer';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+
   </Provider>,
   document.getElementById('root')
 );

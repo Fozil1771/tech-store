@@ -4,33 +4,44 @@ import { connect } from 'react-redux'
 
 /// components
 
-import Products from './components/Products'
-import Navbar from './components/navbar/Navbar'
-import Spinner from './components/Loader'
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
-import SingleProduct from './components/SingleProduct'
+import MainPage from './components/ui/MainPage'
+import Navbar from './components/ui/navbar/Navbar'
+import Spinner from './components/ui/Loader'
+import { Route, Switch } from 'react-router-dom'
+import SingleProduct from './components/ui/detailPage/SingleProduct'
+import BlogPage from './components/ui/blogs/BlogPage'
+import Cart from './components/ui/Cart/Cart'
+import ScrollToTop from './components/ScrollToTop'
+import NotFound from './components/NotFound'
+import UserProfile from './components/ui/user/UserProfile'
+
 
 
 function App({ fetching }) {
 
 
   return (
-    <BrowserRouter>
-      <div className="App">
 
-        {fetching ? <Spinner /> : ''}
+    <div className="App">
+      <ScrollToTop />
 
-        <Navbar />
+      {fetching ? <Spinner /> :
+        <>
 
-        <h1>Initial sssss</h1>
-        <Link to="/product">Products</Link>
-        <Switch>
-          <Route exact path="/product" component={Products} />
-          <Route exact path="/product/:id" component={SingleProduct} />
-        </Switch>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/product/:status/:id" component={SingleProduct} />
+            <Route exact path="/blogs/blog/:id" component={BlogPage} />
+            <Route exact path="/profile" component={UserProfile} />
+            <Route component={NotFound} />
 
-      </div>
-    </BrowserRouter>
+          </Switch>
+        </>
+      }
+    </div>
+
   );
 }
 

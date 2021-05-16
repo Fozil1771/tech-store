@@ -1,6 +1,5 @@
 const fs = require('fs');
 const http = require('http')
-const url = require('url')
 
 const data = fs.readFileSync(`${__dirname}/data.json`, "utf-8")
 
@@ -28,6 +27,6 @@ const server = http.createServer((req, res) => {
 
 
 
-server.listen(5000, '127.0.0.1', () => {
+server.listen(3000, '127.0.0.1', () => {
     console.log('server is running...')
 })
