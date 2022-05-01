@@ -23,6 +23,7 @@ function App({ fetching }) {
   return (
 
     <div className="App">
+      <h1>hello</h1>
       <ScrollToTop />
 
       {fetching ? <Spinner /> :
