@@ -18,7 +18,7 @@ const store = createStore(cartReducer, middleware)
 store.dispatch((disptach) => {
 
     disptach({ type: FETCH_PRODUCTS })
-    axios.get('https://raw.githubusercontent.com/Fozil1771/dataJson/master/data.json')
+    axios.get('https://gist.githubusercontent.com/Fozil1771/86d91a65fd98b88dc2abf1867f361b27/raw/a4c522b99afe3eacf88879f9ac70d60f1d0de613/data')
         .then((response) => {
             disptach({ type: SUCCESS_RPODUCTS, payload: response.data })
 
